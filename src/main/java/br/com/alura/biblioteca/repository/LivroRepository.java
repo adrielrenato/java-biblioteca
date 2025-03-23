@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LivroRepository extends JpaRepository<Livro, Long> {
-    @Lock(LockModeType.OPTIMISTIC)
+    @Lock(LockModeType.PESSIMISTIC_FORCE_INCREMENT)
     Optional<Livro> findById(Long id);
 
 }
